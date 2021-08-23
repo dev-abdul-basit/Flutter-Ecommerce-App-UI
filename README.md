@@ -2,7 +2,7 @@
 
 This e-commerce app can run both Andriod and iOS devices because it builds with flutter framework with best coding practices.
 
-## [Watch it on YouTube](https://youtube.com/playlist?list=PLxUBb2A_UUy8OlaNZpS2mfL8xpHcnd_Af)
+## [Watch it on YouTube](https://youtu.be/iwVu9ByxIH0f)
 
 <!-- **Packages we are using:**
 
