@@ -6,7 +6,7 @@ import '../../../constants.dart';
 
 class OtpForm extends StatefulWidget {
   const OtpForm({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -14,9 +14,9 @@ class OtpForm extends StatefulWidget {
 }
 
 class _OtpFormState extends State<OtpForm> {
-  FocusNode pin2FocusNode;
-  FocusNode pin3FocusNode;
-  FocusNode pin4FocusNode;
+  FocusNode? pin2FocusNode;
+  FocusNode? pin3FocusNode;
+  FocusNode? pin4FocusNode;
 
   @override
   void initState() {
@@ -29,9 +29,9 @@ class _OtpFormState extends State<OtpForm> {
   @override
   void dispose() {
     super.dispose();
-    pin2FocusNode.dispose();
-    pin3FocusNode.dispose();
-    pin4FocusNode.dispose();
+    pin2FocusNode!.dispose();
+    pin3FocusNode!.dispose();
+    pin4FocusNode!.dispose();
   }
 
   void nextField(String value, FocusNode focusNode) {
@@ -59,7 +59,7 @@ class _OtpFormState extends State<OtpForm> {
                   textAlign: TextAlign.center,
                   decoration: otpInputDecoration,
                   onChanged: (value) {
-                    nextField(value, pin2FocusNode);
+                    nextField(value, pin2FocusNode!);
                   },
                 ),
               ),
@@ -72,7 +72,7 @@ class _OtpFormState extends State<OtpForm> {
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   decoration: otpInputDecoration,
-                  onChanged: (value) => nextField(value, pin3FocusNode),
+                  onChanged: (value) => nextField(value, pin3FocusNode!),
                 ),
               ),
               SizedBox(
@@ -84,7 +84,7 @@ class _OtpFormState extends State<OtpForm> {
                   keyboardType: TextInputType.number,
                   textAlign: TextAlign.center,
                   decoration: otpInputDecoration,
-                  onChanged: (value) => nextField(value, pin4FocusNode),
+                  onChanged: (value) => nextField(value, pin4FocusNode!),
                 ),
               ),
               SizedBox(
@@ -98,7 +98,7 @@ class _OtpFormState extends State<OtpForm> {
                   decoration: otpInputDecoration,
                   onChanged: (value) {
                     if (value.length == 1) {
-                      pin4FocusNode.unfocus();
+                      pin4FocusNode!.unfocus();
                       // Then you need to check is the code is correct or not
                     }
                   },

@@ -5,9 +5,12 @@ import '../../../size_config.dart';
 
 class CustomAppBar extends PreferredSize {
   final double rating;
+  final Widget child;
 
-  CustomAppBar({@required this.rating});
-
+  CustomAppBar({
+    required this.rating,
+    required this.child,
+  }) : super(child: child, preferredSize: Size.fromHeight(rating));
   @override
   // AppBar().preferredSize.height provide us the height that appy on our app bar
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
@@ -23,12 +26,14 @@ class CustomAppBar extends PreferredSize {
             SizedBox(
               height: getProportionateScreenWidth(40),
               width: getProportionateScreenWidth(40),
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(60),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(60),
+                  ),
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.zero,
                 ),
-                color: Colors.white,
-                padding: EdgeInsets.zero,
                 onPressed: () => Navigator.pop(context),
                 child: SvgPicture.asset(
                   "assets/icons/Back ICon.svg",
